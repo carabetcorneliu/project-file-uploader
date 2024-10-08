@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <%- include('../navbar', {}) %>
+    <h1>Edit File</h1>
+    <form action="/folders/<%= file.folderId %>/files/<%= file.id %>/edit" method="post">
+        <label for="newName">New File Name:</label>
+        <input type="text" name="newName" id="newName" value="<%= fileNameWithoutExt %>" required>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/folders/<%= file.folderId %>/files">Back to Files</a>
+</body>
+</html>

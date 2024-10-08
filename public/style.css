@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: end;
+    gap: 25px;
+    background-color: #333;
+    padding: 1em;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+.welcome {
+    color: white;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+.firstRow {
+    font-weight: bold;
+    background-color: antiquewhite;
+}
+
+td {
+    border: 1px solid gray;
+    padding: 5px 30px;
+}

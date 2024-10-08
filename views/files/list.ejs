@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>
+        <%= title %>
+    </title>
+</head>
+<body>
+    <%- include('../navbar', {}) %>
+    <h1>Files in <%= folder.name %></h1>
+    <a href="/folders/<%= folder.id %>/files/upload">Upload New File</a>
+    <ul>
+        <% folder.files.forEach(file => { %>
+            <li>
+                <a href="/folders/<%= file.folderId %>/files/uploads/<%= file.filename %>"><%= file.originalName %></a>
+                <a href="/folders/<%= file.folderId %>/files/<%= file.id %>/details"><button>details</button></a>
+                <a href="/folders/<%= file.folderId %>/files/<%= file.id %>/edit"><button>rename</button></a>
+                <form action="/folders/<%= file.folderId %>/files/<%= file.id %>/delete" method="POST" style="display: inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/folders">Back to Folders</a>
+</body>
+</html>

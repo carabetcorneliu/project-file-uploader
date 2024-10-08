@@ -1,0 +1,14 @@
+<nav class="navbar">
+    <% if (locals.user) { %>
+        <span class="welcome">Welcome <strong><%= user.username %></strong>,</span>
+        <a href="/">Home</a>
+        <a href="/folders">Folders</a>
+        <a href="/auth/logout">Logout</a>
+        <a href="/about">About</a>
+    <% } else { %> 
+    <a href="/">Home</a>
+    <a href="/auth/login">Login</a>
+    <a href="/auth/register">Register</a>
+    <a href="/about">About</a>
+<% } %>
+</nav>
